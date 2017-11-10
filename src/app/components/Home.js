@@ -23,10 +23,15 @@ export default class Home extends Component{
     }
 
     componentDidMount(){
-        setInterval(()=> {
+      this.handle =  setInterval(()=> {
             this.increment();
             console.log("Timer running");
         },2000)
+    }
+
+    componentWillUnmount(){
+        console.log("componentWillUnmount called");
+        clearInterval(this.handle);
     }
 
     increment(){
