@@ -35,7 +35,9 @@ export default class App extends React.Component{
 
                 <Header title="React App Header2"/>
 
-                <button onClick={ (e) => this.showHide(e)}>Show/Hide </button>
+                <button onClick={ (e) => this.showHide(e)}>
+                    {this.state.show ?"Hide":"Show"}
+                </button>
 
                 {
                    this.state.show && <Home start={100}/>
