@@ -6,6 +6,8 @@ import React,{Component} from "react";
 export default class Home extends Component{
 
     constructor(props){
+
+        console.log("Constructor called");
         super(props);
 
         //keyword
@@ -14,6 +16,17 @@ export default class Home extends Component{
         this.state = {
             counter : props.start || 0 
         }
+    }
+
+    componentWillMount(){
+        console.log("componentWillMount called");
+    }
+
+    componentDidMount(){
+        setInterval(()=> {
+            this.increment();
+            console.log("Timer running");
+        },2000)
     }
 
     increment(){

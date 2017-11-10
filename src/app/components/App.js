@@ -8,6 +8,24 @@ var divStyle = {
 };
 
 export default class App extends React.Component{
+
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            show : true
+        }
+    }
+
+    showHide(e){
+        console.log("Event object",e);
+
+        this.setState({
+            show : !this.state.show
+        });
+    }
+
     //keyword
     //returns a view        
     render() {
@@ -17,8 +35,11 @@ export default class App extends React.Component{
 
                 <Header title="React App Header2"/>
 
+                <button onClick={ (e) => this.showHide(e)}>Show/Hide </button>
 
-                <Home start={100}/>
+                {
+                   this.state.show && <Home start={100}/>
+                }
 
             {/**
              *  Pass by value means as a number
