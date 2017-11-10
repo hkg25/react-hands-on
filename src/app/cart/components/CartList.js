@@ -13,6 +13,8 @@ export default class CartList extends Component {
     }
     
     render() {
+
+        console.log("Cart List render");
         let {items} = this.props;
 
         return (

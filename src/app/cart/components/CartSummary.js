@@ -6,12 +6,37 @@ export default class CartSummary extends Component {
         super(props);
 
     }
+
+    //called for every parent render
+    componentWillReceiveProps(nextProps){
+        console.log("Summary will receive",nextProps);
+        console.log("Summary current props ",this.props);
+    }
+
+    //called for every parent render
+    //called for every current this.setState
+    //return true  ==> call render method
+    //return false ==> no call to render method
+    shouldComponentUpdate(nextProps,nextState){
+        console.log("Cart Summary should update");
+
+        if(nextProps.amount != this.props.amount || 
+            nextProps.count != this.props.count )
+        {
+                return true; // call render method
+        }
+
+        return false; // do not call render method
+    }
     
     componentDidMount() {
         
     }
+
+
     
     render() {
+        console.log("Cart Summary render");
         return (
             <div>
             <h2>Cart Summary</h2>

@@ -11,7 +11,7 @@ export default class Cart extends Component {
         this.state = {
             items: [{id: 1, price: 10, name:'p1', qty: 1}],
             amount: 0,
-            count: 0,
+            count: 1,
             flag: true
         }
     }
@@ -33,7 +33,8 @@ export default class Cart extends Component {
         //Good approach
         //Marge process
         this.setState({
-            items : this.state.items
+            items : this.state.items,
+            count : this.state.count + 1
         });
 
     }
@@ -58,6 +59,7 @@ export default class Cart extends Component {
     }
     
     render() {
+        console.log("Cart render");
         return (
             <div> 
             <h2>Cart</h2>
