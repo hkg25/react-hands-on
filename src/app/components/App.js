@@ -47,11 +47,13 @@ export default class App extends React.Component{
              *  Pass by value means as a number
              *  year="2017" it will be passed as string
              */}
-                <Footer year={2017} 
+                <Footer year={"2017"} 
                         company="React App Footer1"/> 
 
-                <Footer year={2015} 
-                        company="React App Footer2"/>   
+              {/**
+             * Will pick default props value defined in Footer.js
+             */}
+                <Footer year={2015} />   
              </div> 
         )
     }
