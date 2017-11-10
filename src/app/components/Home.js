@@ -29,7 +29,7 @@ export default class Home extends Component{
         },2000)
     }
 
-    componentWillUnmount(){
+    componentWillUnmount(){ 
         console.log("componentWillUnmount called");
         clearInterval(this.handle);
     }
