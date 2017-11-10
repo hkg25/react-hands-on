@@ -18,6 +18,24 @@ export default class Cart extends Component {
 
     addItem() {
 
+        let id = Math.ceil(Math.random() * 1000000);
+        let item = {
+            id: id,
+            name: 'Product ' + id,
+            price: 100 + Math.ceil(Math.random() * 1000),
+            qty: 1
+        }
+
+        //Bad approach
+        //Mutability
+        this.state.items.push(item);
+
+        //Good approach
+        //Marge process
+        this.setState({
+            items : this.state.items
+        });
+
     }
 
     removeItem(id) {
@@ -33,7 +51,10 @@ export default class Cart extends Component {
     }
    
     refresh() {
-        
+        //dummy method
+        this.setState({
+            flag:true
+        })
     }
     
     render() {

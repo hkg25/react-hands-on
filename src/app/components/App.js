@@ -2,9 +2,10 @@ import React from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
+import Cart from "../cart/components/Cart";
 
 var divStyle = {
-    color: 'red',
+    //color: 'red',
 };
 
 export default class App extends React.Component{
@@ -14,7 +15,7 @@ export default class App extends React.Component{
         super(props);
 
         this.state = {
-            show : true
+            show : false
         }
     }
 
@@ -42,6 +43,8 @@ export default class App extends React.Component{
                 {
                    this.state.show && <Home start={100}/>
                 }
+
+                <Cart/>
 
             {/**
              *  Pass by value means as a number
