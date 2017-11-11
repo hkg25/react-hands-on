@@ -63,6 +63,7 @@ console.log("State ", store.getState());
 // type is a keyword
 // payload is not a keyword. It is conventional/best practice.we can use value:10 directly
 // instead of payload 
+// type should be unique across the application
 let action = {
     type :INCREMENT,
     payload : {
@@ -78,3 +79,5 @@ console.log("State after dispatch ", store.getState());
 
 console.log("Dispatch Unknown type");
 store.dispatch({type:"UNKNOWN"});
+
+//console.log("counter value is " , store.getState().counter);

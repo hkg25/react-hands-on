@@ -5,17 +5,19 @@ import store from "../store";
 export default class Home extends Component{
 
     constructor(props){
+
         console.log("Constructor called");
         super(props);
-    }
 
-    increment(){
-        store.dispatch({
-            type :"INCREMENT",
-            payload : {
-                value : 1
-            }
-        })        
+        //keyword
+        //mutate/change data
+        //initialize the state from props
+        this.state = {
+            counter : props.start || 0 
+        }
+
+        //Solve the state problem using redux
+        
     }
 
     componentWillMount(){
@@ -26,27 +28,35 @@ export default class Home extends Component{
       this.handle =  setInterval(()=> {
             this.increment();
             console.log("Timer running");
-        },2000);
-
-        this.unsubscribeFn = store.subscribe(()=>{
-            this.forceUpdate()
-        })
+        },200000)
     }
 
     componentWillUnmount(){ 
-        this.unsubscribeFn();
         console.log("componentWillUnmount called");
         clearInterval(this.handle);
     }
 
+    increment(){
+        //keyword
+        //calls render method
+        this.setState({
+            counter : this.state.counter + 1
+        });
+
+        //keyword 
+        //bad way
+        //this.state.counter++;
+        //console.log("counter ", this.state.counter);
+
+        //calls render method
+        //this.forceUpdate();
+    }
+
     render(){
-
-        //redux state
-        let state = store.getState();
-
          return (
             <div>
-                <h2>Counter : {state.counter} </h2>
+                <h2>Counter : {this.state.counter} </h2>
+
                 {/*onClick keyword*/}
                 <button onClick={() => this.increment()}> Increment </button>
             </div>
