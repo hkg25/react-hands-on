@@ -32,11 +32,18 @@ export default class App extends React.Component{
     render() {
         return (
             <div style={divStyle}>
-                <Header title="React App Header1"/>
+                <Header title="React App Header1">
+                    <h2>My Header </h2>
+                </Header>    
 
-                <Header title="React App Header2"/>
+                {/* <Header title="React App Header2"/> */}
 
-                <button onClick={ (e) => this.showHide(e)}>
+                {/*view container*/}
+                <div>
+                    {this.props.children}
+                </div>
+
+                {/* <button onClick={ (e) => this.showHide(e)}>
                     {this.state.show ?"Hide":"Show"}
                 </button>
 
@@ -44,7 +51,7 @@ export default class App extends React.Component{
                    this.state.show && <Home start={100}/>
                 }
 
-                <Cart/>
+                <Cart/> */}
 
             {/**
              *  Pass by value means as a number
@@ -56,7 +63,9 @@ export default class App extends React.Component{
               {/**
              * Will pick default props value defined in Footer.js
              */}
-                <Footer year={2015} />   
+                <Footer year={2015}>
+                    <h4>Special Offer</h4>
+                </Footer>       
              </div> 
         )
     }

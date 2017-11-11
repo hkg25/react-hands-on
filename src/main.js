@@ -2,8 +2,9 @@
 
 import React from "react";
 import {render} from "react-dom";
-import App from "./app/components/App";
 
-render(<App/>,// react app 
+import Routes from "./app/Routes";
+
+render(<Routes/>,// react app 
         document.getElementById("root") // browser
 )       

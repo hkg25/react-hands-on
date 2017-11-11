@@ -3,17 +3,16 @@ import PropTypes from "prop-types";
 
 
 //functional component
-// presentational component
-//stateless component
+//presentational component
+//stateless component (no state is available)
 export default function Footer(props){
     return(
         <div>
             <hr/>
             Copyright@{props.year}, {props.company}
-
+            {props.children}
             {/* Javascript expression not statements*/}
-           <br/>
-           <br/> {10*100}
+            {10*100}
         </div>
     )
 }

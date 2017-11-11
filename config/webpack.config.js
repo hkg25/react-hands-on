@@ -41,9 +41,9 @@ var config = {
     //port: 8080,
 
     //for supporting history api fallback
-    // historyApiFallback: {
-    //   index: '/'
-    // }
+     historyApiFallback: {
+       index: '/'
+     }
   }
 
 };

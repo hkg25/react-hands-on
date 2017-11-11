@@ -41,10 +41,10 @@ export default class CartItem extends Component {
                 
                 <td>{item.price}</td>
 
+                 {/*Using ref to access real dom in react*/}
                 <td>
                    <input value={this.state.quantity}
                           type="number"
-                          {/*Using ref to access real dom in react*/}
                           ref={(domElement) => this.input = domElement}
                           onChange = { (e) => this.onValueChange(e)}
                     />
