@@ -71,6 +71,17 @@ let action = {
     }
 }
 
+//action creator
+//helper to create actions
+function decrementAction(value){
+    return  {
+        type :INCREMENT,
+        payload : {
+            value : value
+        }
+    }
+}
+
 console.log("Dispatch increment 10 ");
 // Dispatch 
 // calls the reducer
@@ -81,3 +92,9 @@ console.log("Dispatch Unknown type");
 store.dispatch({type:"UNKNOWN"});
 
 //console.log("counter value is " , store.getState().counter);
+
+action = decrementAction(1);
+//action => {type:"DECREMENT",payload:{value:1}}
+store.dispatch(action);
+
+store.dispatch(decrementAction(2));

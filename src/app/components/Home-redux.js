@@ -1,5 +1,8 @@
-//React redux part
+// Solve state issue with redux itself
+
 import React,{Component} from "react";
+import store from "../store";
+// No data binding in react
 
 export default class Home extends Component{
 
@@ -9,7 +12,12 @@ export default class Home extends Component{
     }
 
     increment(){
-             
+        store.dispatch({
+            type :"INCREMENT",
+            payload : {
+                value : 1
+            }
+        })        
     }
 
     componentWillMount(){
@@ -22,18 +30,25 @@ export default class Home extends Component{
             console.log("Timer running");
         },2000);
 
-   }
+        this.unsubscribeFn = store.subscribe(()=>{
+            this.forceUpdate()
+        })
+    }
 
     componentWillUnmount(){ 
+        this.unsubscribeFn();
         console.log("componentWillUnmount called");
         clearInterval(this.handle);
     }
 
     render(){
 
+        //redux state
+        let state = store.getState();
+
          return (
             <div>
-                <h2>Counter : {this.props.counter} </h2>
+                <h2>Counter : {state.counter} </h2>
                 {/*onClick keyword*/}
                 <button onClick={() => this.increment()}> Increment </button>
             </div>

@@ -3,7 +3,7 @@ Impure function => same input --> different output
 Pure function => same input --> same output
 
 React is used for dom/view manipulation
-Redux is used for state management
+Redux is used for state management and it is synchronous
     -- Action
     -- Action Creator
     -- Dispatch
@@ -28,4 +28,10 @@ Store => Model/Data management
 Actions => are payload of information
     -- it is an object and passed as argument in Reducer as second arg
     -- also passed as an arg in dispatch method for store the info in Store
-    
+
+
+----------------------------------React Redux Library -----------------------------------------
+    -- connects React and Redux
+    -- create bridge using container
+    -- improve unit testing 
+    -- provide segregation between react and redux and keep them independent
