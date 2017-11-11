@@ -16,7 +16,8 @@ export default class CartItem extends Component {
     }
     
     componentDidMount() {
-        
+        // input is real DOM reference
+        this.input.focus();
     }
 
     onValueChange(e){
@@ -43,6 +44,8 @@ export default class CartItem extends Component {
                 <td>
                    <input value={this.state.quantity}
                           type="number"
+                          {/*Using ref to access real dom in react*/}
+                          ref={(domElement) => this.input = domElement}
                           onChange = { (e) => this.onValueChange(e)}
                     />
                 </td>
