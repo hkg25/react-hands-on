@@ -5,6 +5,8 @@ import {render} from "react-dom";
 
 import Routes from "./app/Routes";
 
+import store from "./app/store";
+
 render(<Routes/>,// react app 
         document.getElementById("root") // browser
 )       

@@ -26,7 +26,7 @@ export default class Home extends Component{
       this.handle =  setInterval(()=> {
             this.increment();
             console.log("Timer running");
-        },2000)
+        },200000)
     }
 
     componentWillUnmount(){ 

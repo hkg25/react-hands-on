@@ -57,7 +57,7 @@ export default class App extends React.Component{
              *  Pass by value means as a number
              *  year="2017" it will be passed as string
              */}
-                <Footer year={"2017"} 
+                <Footer year={2017} 
                         company="React App Footer1"/> 
 
               {/**
