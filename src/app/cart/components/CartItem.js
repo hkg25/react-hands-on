@@ -56,7 +56,7 @@ export default class CartItem extends Component {
                 </td>
 
                 <td>
-                    <button onClick={() => {} }>
+                    <button onClick={() => this.props.onRemove(item.id) }>
                         Remove
                     </button>
                 </td>

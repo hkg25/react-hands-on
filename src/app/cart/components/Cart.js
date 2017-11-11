@@ -45,15 +45,22 @@ export default class Cart extends Component {
     }
 
     removeItem(id) {
-
+      let newItems = this.state.items.filter(item => item.id !=id);
+      this.setState({
+          items : newItems,
+          count : newItems.length
+      })
     }
 
     updateItem(id, qty) {
-        
+
     }
 
     emptyCart() {
-
+        this.setState({
+            items :[],
+            count : 0
+        })
     }
    
     refresh() {
@@ -83,7 +90,8 @@ export default class Cart extends Component {
             </button>
   
 
-            <CartList items = {this.state.items} >
+            <CartList items = {this.state.items} 
+                    onRemove={(id) => this.removeItem(id)}>
             </CartList>
 
             <CartSummary amount={this.state.amount}

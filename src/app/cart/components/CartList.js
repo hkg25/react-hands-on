@@ -48,7 +48,8 @@ export default class CartList extends Component {
                 {
                     items.map ( item => (
                         <CartItem key={item.id} 
-                                item={item}>
+                                item={item}
+                                onRemove={this.props.onRemove}>
                         </CartItem>
                     ))
                 }
