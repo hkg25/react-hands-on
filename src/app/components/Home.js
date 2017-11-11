@@ -9,7 +9,7 @@ export default class Home extends Component{
     }
 
     increment(){
-             
+        this.props.onIncrement(1);        
     }
 
     componentWillMount(){

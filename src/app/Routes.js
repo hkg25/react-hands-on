@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import App from "./components/App";
-import Home from "./components/Home";
+import Home from "./containers/Home";
 import NotFound from "./components/NotFound";
 
 import Cart from "./cart/components/Cart";
