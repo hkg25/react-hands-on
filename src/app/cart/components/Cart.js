@@ -28,13 +28,18 @@ export default class Cart extends Component {
 
         //Bad approach
         //Mutability
-        this.state.items.push(item);
+        // this.state.items.push(item);
+
+        //Good approach of above one
+        //Immutability
+        //clone list using spread operator and add new item to cloned one
+        let newItems = [...this.state.items,item];
 
         //Good approach
         //Marge process
         this.setState({
-            items : this.state.items,
-            count : this.state.count + 1
+            items : newItems,
+            count : newItems.length
         });
 
     }
@@ -44,7 +49,7 @@ export default class Cart extends Component {
     }
 
     updateItem(id, qty) {
-
+        
     }
 
     emptyCart() {

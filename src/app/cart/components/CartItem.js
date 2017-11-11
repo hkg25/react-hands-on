@@ -7,7 +7,7 @@ export default class CartItem extends Component {
         super(props);
         
         this.state = {
-
+            quantity : props.item.qty
         }
     }
 
@@ -18,7 +18,18 @@ export default class CartItem extends Component {
     componentDidMount() {
         
     }
-    
+
+    onValueChange(e){
+        console.log("Cart Item quantity change event : ", e);
+        // target is Real dom input element
+        let target = e.target;
+        console.log("udpated value :" , target.value);
+
+        this.setState({
+            quantity : target.value
+        });
+    }
+
     render() {
         let item = this.props.item;
         console.log("CartItem render ", item.id);
@@ -30,13 +41,13 @@ export default class CartItem extends Component {
                 <td>{item.price}</td>
 
                 <td>
-                   <input value={item.qty}
+                   <input value={this.state.quantity}
                           type="number"
-                          onChange = { () => {}}
+                          onChange = { (e) => this.onValueChange(e)}
                     />
                 </td>
 
-                <td>{item.price * item.qty}</td>
+                <td>{item.price * this.state.quantity}</td>
                 
                 <td>
                     <button onClick={() => {} }   >

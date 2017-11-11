@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    // hot is for HMR
+    // inline is for webpack runtime
+    // open is for opening the browser
     "start" : "webpack-dev-server --config config/webpack.config.js --hot --inline --open"
   },
   "keywords": [],
