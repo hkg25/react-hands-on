@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-export default class CartSummary extends Component {
+export default class CartSummary extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -17,17 +17,17 @@ export default class CartSummary extends Component {
     //called for every current this.setState
     //return true  ==> call render method
     //return false ==> no call to render method
-    shouldComponentUpdate(nextProps,nextState){
-        console.log("Cart Summary should update");
+    // shouldComponentUpdate(nextProps,nextState){
+    //     console.log("Cart Summary should update");
 
-        if(nextProps.amount != this.props.amount || 
-            nextProps.count != this.props.count )
-        {
-                return true; // call render method
-        }
+    //     if(nextProps.amount != this.props.amount || 
+    //         nextProps.count != this.props.count )
+    //     {
+    //             return true; // call render method
+    //     }
 
-        return false; // do not call render method
-    }
+    //     return false; // do not call render method
+    // }
     
     componentDidMount() {
         

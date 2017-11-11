@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
 import CartItem from "./CartItem";
 
-export default class CartList extends Component {
+export default class CartList extends PureComponent {
     constructor(props) {
         super(props);
     }
@@ -12,18 +12,18 @@ export default class CartList extends Component {
         
     }
     
-    shouldComponentUpdate(nextProps,nextState){
-        console.log("Cart List should update");
-        console.log("Cart List Next Props : ", nextProps);
-        console.log("Cart List Props : ", this.props);
+    // shouldComponentUpdate(nextProps,nextState){
+    //     console.log("Cart List should update");
+    //     console.log("Cart List Next Props : ", nextProps);
+    //     console.log("Cart List Props : ", this.props);
 
-        if(nextProps.items != this.props.items)
-        {
-                return true; // call render method
-        }
+    //     if(nextProps.items != this.props.items)
+    //     {
+    //             return true; // call render method
+    //     }
 
-        return false; // do not call render method
-    }
+    //     return false; // do not call render method
+    // }
 
     render() {
 

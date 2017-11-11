@@ -14,6 +14,12 @@ export default class Cart extends Component {
             count: 1,
             flag: true
         }
+
+        // ES5 style
+       // this.onRemove = this.removeItem.bind(this);
+
+        //Es6 style : Arrow operator
+        this.onRemove = (id) => this.removeItem(id);
     }
 
     addItem() {
@@ -91,7 +97,7 @@ export default class Cart extends Component {
   
 
             <CartList items = {this.state.items} 
-                    onRemove={(id) => this.removeItem(id)}>
+                    onRemove={this.onRemove}>
             </CartList>
 
             <CartSummary amount={this.state.amount}
