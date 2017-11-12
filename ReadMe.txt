@@ -53,3 +53,11 @@ Actions => are payload of information
 
 -------------------------Downside of react----------------------------------------------------
 when application is form intensive, Do not use react. Go with angular. It's a downside of react.
+
+---------------------------RX JS ------------------------------------------------------------
+-- Observer patterns
+-- Stream of data/events
+-- scenario like auto suggestions
+-- data streaming Library
+-- not a replacement of redux
+-- can be used as replacement of promises.
