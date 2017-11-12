@@ -41,3 +41,6 @@ Actions => are payload of information
 -- added between Dispatch and Reducers
 -- next function calls next middleware/reducer in the chain
 -- applyMiddleware function from redux
+
+
+-------------------------------Thunk Middleware-------------------------------------------------

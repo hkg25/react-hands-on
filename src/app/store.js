@@ -1,5 +1,6 @@
 import {createStore,combineReducers,applyMiddleware} from "redux";
 import cartReducer from "./redux-cart/state/reducers/cartReducer"
+import productReducer from "./redux-cart/state/reducers/productReducer"
 
 import {logger} from "./middlewares";
 
@@ -33,8 +34,8 @@ function counterReducer(state=100,action){
 let rootReducer = combineReducers({
     // state name : reducer function
     counter : counterReducer,
-    cartItems : cartReducer
-    //product : productReducer
+    cartItems : cartReducer,
+    product : productReducer
 })
 
 //Store

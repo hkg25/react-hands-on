@@ -6,8 +6,8 @@ import Home from "./containers/Home";
 import NotFound from "./components/NotFound";
 
 //import Cart from "./cart/components/Cart";
-import Cart from "./redux-cart/containers/Cart"
-
+//import Cart from "./redux-cart/containers/Cart"
+import CartRoutes from "./redux-cart/Routes";
 
 //Route configuration
 // Functional component
@@ -18,7 +18,7 @@ export default function Routes(props){
             <App>
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/cart" component={Cart}/>
+                    <Route path="/cart" component={CartRoutes}/>
                     <Route path="*" component={NotFound}/>
                 </Switch>    
             </App>    
