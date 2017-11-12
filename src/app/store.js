@@ -7,6 +7,7 @@ const RESET = "RESET";
 
 // Reducer functionm
 // state is passed as undefined while called by store like counterReducer(undefinded,action)
+// state is manipulated by reducer
 function counterReducer(state=100,action){
     console.log("counter reducer ", state, action);
 
