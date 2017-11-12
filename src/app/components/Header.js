@@ -21,6 +21,8 @@ export default class Header extends Component{
                 <NavLink to="/cart" className="button" activeClassName="success"> Cart [ {this.props.count} ]</NavLink>
                 <NavLink to="/not-found-here" className="button" activeClassName="success"> Not Found </NavLink>
 
+                <NavLink to="/about" className="button" activeClassName="success"> About </NavLink>
+
                 <button onClick={() => {this.props.emptyCart} }>Empty Cart</button>
                 Product[{this.props.productCount}]
             </div>

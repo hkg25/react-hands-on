@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import App from "./components/App";
 import Home from "./containers/Home";
 import NotFound from "./components/NotFound";
+import About from "./components/About";
+
 
 //import Cart from "./cart/components/Cart";
 //import Cart from "./redux-cart/containers/Cart"
@@ -34,6 +36,7 @@ export default function Routes(props){
             <App>
                 <Switch>
                     <Route path="/" exact component={Home}/>
+                    <Route path="/about" component={About}/>
                     <Route path="/cart" component={LoadableCartRouteComponent}/>
                     <Route path="*" component={NotFound}/>
                 </Switch>    
