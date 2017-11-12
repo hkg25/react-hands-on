@@ -12,6 +12,11 @@ export default class ProductList extends Component {
     }
     
     render() {
+
+        if(this.props.loading){
+            return <h2>Loading...</h2>
+        }
+
         let products = this.props.products;
 
         return (

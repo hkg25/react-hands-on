@@ -6,6 +6,8 @@ import * as ActionTypes from "./ActionTypes";
 
 const PRODUCT_URL = "http://localhost:7070/api/products";
 
+const DELAYED_PRODUCT_URL = "http://localhost:7070/delayed/api/products";
+
 //action creators are plain function, they create 
 //plain objects
 
@@ -88,9 +90,13 @@ export function fetchProducts(){
     // this shall be called by thunk
     // dispatch will be provided by thunk
     return function(dispatch){
+
         console.log("Called by thunk");
         // console.log( new Error("Call Stack").stack ); 
-        fetch(PRODUCT_URL).then(response => {
+
+        dispatch(loading(true));
+
+        fetch(DELAYED_PRODUCT_URL).then(response => {
             console.log("Ajax response ", response);
             //return promise of json
             return response.json();
@@ -98,10 +104,13 @@ export function fetchProducts(){
             console.log("Product List ", products);
             let action = initProducts(products);
             dispatch(action);
+            dispatch(loading(false));
         }).catch(err =>{
             console.log("Error occured ", new Error("Call Stack").stack)
            // return new Error("Call Stack").stack ;
+           dispatch(loading(false));
         });
+
     }
 
 }
