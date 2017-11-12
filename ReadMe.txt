@@ -49,3 +49,7 @@ Actions => are payload of information
 -- Code is  : https://github.com/gaearon/redux-thunk/blob/master/src/index.js
 -- check for function type and call the function. Check gitHub Code
 -- we can not return function from action
+
+
+-------------------------Downside of react----------------------------------------------------
+when application is form intensive, Do not use react. Go with angular. It's a downside of react.
