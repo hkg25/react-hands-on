@@ -18,8 +18,11 @@ export default class Header extends Component{
                 {this.props.children}
                 {/* todo : navigation */}    
                 <NavLink to="/" exact className="button" activeClassName="success"> Home </NavLink>
-                <NavLink to="/cart" className="button" activeClassName="success"> Cart </NavLink>
+                <NavLink to="/cart" className="button" activeClassName="success"> Cart [ {this.props.count} ]</NavLink>
                 <NavLink to="/not-found-here" className="button" activeClassName="success"> Not Found </NavLink>
+
+                <button onClick={() => {this.props.emptyCart} }>Empty Cart</button>
+                Product[{this.props.productCount}]
             </div>
         )
     }

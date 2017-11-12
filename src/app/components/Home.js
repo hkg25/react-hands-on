@@ -33,13 +33,18 @@ export default class Home extends Component{
         //   },2000);
   
           // subscribe is RXJS function here to subscribe
-          this.subject.subscribe( n => {
+          this.subscription =  this.subject.subscribe( n => {
               console.log("Subscribed 1 " , n);
           });
 
+          console.log(this.subscription);
+
+          this.subscription.unsubscribe();
+
 
           // produce 1 second gap in subscribe
-          this.subject.debounceTime(1000)
+          this.subject.debounceTime(1000).
+          filter(n => n >= 50)
           .subscribe( n => {
             console.log("Subscribed 2 " , n);
             this.props.onIncrement(n); 
