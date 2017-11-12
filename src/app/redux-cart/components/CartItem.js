@@ -21,7 +21,7 @@ export default class CartItem extends Component {
         //input is REAL DOM reference
         this.input.focus();
 
-        this.mySpan.textContent = "Total"
+        //this.mySpan.textContent = "Total"
         
     }
 

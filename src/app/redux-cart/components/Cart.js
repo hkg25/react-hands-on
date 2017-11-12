@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 import CartList from "./CartList";
-import CartSummary from "./CartSummary";
+import CartSummary from "../containers/CartSummary";
 
 export default class Cart extends Component {
     constructor(props) {
