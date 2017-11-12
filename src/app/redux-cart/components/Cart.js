@@ -20,13 +20,20 @@ export default class Cart extends Component {
         }
   
         //add to store dispatch
+
+        // version 1
        // this.props.onAddItem(item);
-       this.props.addItemToCart(item);
+
+       // version 2
+       // this.props.addItemToCart(item);
+
+       // version 3
+       this.props.actions.addItemToCart(item);
     }
 
       
     emptyCart() {
-        
+        this.props.actions.emptyCart();
     }
     
     

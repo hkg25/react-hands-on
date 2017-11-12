@@ -24,7 +24,11 @@ const mapDispatchToProps = (dispatch) => {
         //use bindActionCreators
         //shorter version of onAddItem
         addItemToCart : bindActionCreators(actions.addItemToCart,
-            dispatch)
+            dispatch),
+        
+        // Wrap all actions from action file
+        // props.action.addItemToCart, props.action.emptyCart ...    
+        actions : bindActionCreators(actions,dispatch)   
        }
    }
 
