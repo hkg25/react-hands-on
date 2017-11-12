@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.js --hot --inline --open",
+    "build": "webpack --config config/webpack.prod.config.js",
     "test" : "jest",
     "test-coverage" : "jest --coverage"
   },
