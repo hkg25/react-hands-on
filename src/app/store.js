@@ -2,6 +2,7 @@ import {createStore,combineReducers,applyMiddleware} from "redux";
 import cartReducer from "./redux-cart/state/reducers/cartReducer"
 import productReducer from "./redux-cart/state/reducers/productReducer"
 
+import thunk from "redux-thunk";
 import {logger} from "./middlewares";
 
 const INCREMENT = "INCREMENT";
@@ -41,7 +42,7 @@ let rootReducer = combineReducers({
 //Store
 //call reducer with @@redux/INIT to initialize default state
 let store =  createStore(rootReducer, 
-                        applyMiddleware(logger));
+                        applyMiddleware(logger,thunk));
 
 export default store;
 

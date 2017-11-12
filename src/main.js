@@ -1,5 +1,5 @@
 //bootstraping react into browser
-
+import "whatwg-fetch";
 import React from "react";
 import {render} from "react-dom";
 

@@ -8,7 +8,7 @@ export default class ProductList extends Component {
     }
     
     componentDidMount() {
-        
+        this.props.actions.fetchProducts();
     }
     
     render() {
@@ -28,7 +28,7 @@ export default class ProductList extends Component {
                     </tr>
                   
                 {
-                    products.map (product => (
+                    this.props.products.map(product => (
                         <tr key={product.id}>
                            <td>{product.name}</td>
                            <td>{product.price}</td>

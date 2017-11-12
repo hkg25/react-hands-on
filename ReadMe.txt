@@ -44,3 +44,8 @@ Actions => are payload of information
 
 
 -------------------------------Thunk Middleware-------------------------------------------------
+-- used to call ajax in redux as redux is sync in nature
+-- It's a middleware
+-- Code is  : https://github.com/gaearon/redux-thunk/blob/master/src/index.js
+-- check for function type and call the function. Check gitHub Code
+-- we can not return function from action
