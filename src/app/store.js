@@ -1,4 +1,5 @@
 import {createStore,combineReducers} from "redux";
+import cartReducer from "./redux-cart/state/reducers/cartReducer"
 
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
@@ -30,7 +31,7 @@ function counterReducer(state=100,action){
 let rootReducer = combineReducers({
     // state name : reducer function
     counter : counterReducer,
-    //cartItems : cartReducer
+    cartItems : cartReducer
     //product : productReducer
 })
 
@@ -40,62 +41,3 @@ let store =  createStore(rootReducer);
 
 export default store;
 
-
-//--------------------learning -------------------------
-
-//subscribe take callback function as param
-// called after each dispatch execution
-
-store.subscribe(function callback(){
-    console.log("Subscribe");
-});
-
-// component did mount
-let unsubscripeFn  = store.subscribe(function callback(){
-    console.log("Subscribe 2");
-});
-
-// componenet will unmount
-unsubscripeFn();
-
-console.log("State ", store.getState());
-
-// Action is an object
-// type is a keyword
-// payload is not a keyword. It is conventional/best practice.we can use value:10 directly
-// instead of payload 
-// type should be unique across the application
-let action = {
-    type :INCREMENT,
-    payload : {
-        value : 10
-    }
-}
-
-//action creator
-//helper to create actions
-function decrementAction(value){
-    return  {
-        type :INCREMENT,
-        payload : {
-            value : value
-        }
-    }
-}
-
-console.log("Dispatch increment 10 ");
-// Dispatch 
-// calls the reducer
-store.dispatch(action);
-console.log("State after dispatch ", store.getState());
-
-console.log("Dispatch Unknown type");
-store.dispatch({type:"UNKNOWN"});
-
-//console.log("counter value is " , store.getState().counter);
-
-action = decrementAction(1);
-//action => {type:"DECREMENT",payload:{value:1}}
-store.dispatch(action);
-
-store.dispatch(decrementAction(2));

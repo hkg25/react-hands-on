@@ -5,7 +5,8 @@ import App from "./components/App";
 import Home from "./containers/Home";
 import NotFound from "./components/NotFound";
 
-import Cart from "./cart/components/Cart";
+//import Cart from "./cart/components/Cart";
+import Cart from "./redux-cart/containers/Cart"
 
 
 //Route configuration

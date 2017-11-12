@@ -19,7 +19,9 @@ export default class Cart extends Component {
             qty: 1
         }
   
-        //TODO: add to store
+        //add to store dispatch
+       // this.props.onAddItem(item);
+       this.props.addItemToCart(item);
     }
 
       
@@ -46,7 +48,7 @@ export default class Cart extends Component {
 
  
 
-            <CartList items = {this.state.items}
+            <CartList items = {this.props.items}
              >
 
             </CartList>
