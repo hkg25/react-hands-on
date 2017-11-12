@@ -39,7 +39,7 @@ export default class ProductList extends Component {
                            <td>{product.price}</td>
                            <td>{product.year}</td>
                            <td>
-                               <button onClick={() => this.props.addItemToCart(product)}>
+                               <button onClick={() => this.props.actions.addItemToCart(product)}>
                                 +Cart
                                </button>
                             </td>
