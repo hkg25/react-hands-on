@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 
+
 export default class CartItem extends Component {
     constructor(props) {
         super(props);
@@ -65,13 +66,13 @@ export default class CartItem extends Component {
                 </td>
                 
                 <td>
-                    <button onClick={() => {} }   >
+                    <button onClick={() => this.props.actions.updateItemInCart(item.id,this.state.qty)}  >
                         Update
                     </button>
                 </td>
 
                 <td>
-                    <button onClick={() => {} }>
+                    <button onClick={() => this.props.actions.removeItemFromCart(item.id) }>
                         Remove
                     </button>
                 </td>

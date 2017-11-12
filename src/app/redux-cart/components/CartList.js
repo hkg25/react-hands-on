@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-import CartItem from "./CartItem";
+import CartItem from "../containers/CartItem";
 
 export default class CartList extends PureComponent {
     constructor(props) {
