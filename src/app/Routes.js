@@ -16,7 +16,7 @@ function Loading() {
     return (
         <div> 
             Loading Modules...
-        </div>
+=        </div>
     )
 }
 
