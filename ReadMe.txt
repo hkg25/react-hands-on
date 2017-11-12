@@ -35,3 +35,9 @@ Actions => are payload of information
     -- create bridge using container
     -- improve unit testing 
     -- provide segregation between react and redux and keep them independent
+
+
+-------------------------------Middlewares-----------------------------------------------------
+-- added between Dispatch and Reducers
+-- next function calls next middleware/reducer in the chain
+-- applyMiddleware function from redux
